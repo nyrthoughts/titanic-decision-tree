@@ -140,7 +140,6 @@ We import needed packages for the visualization
 from sklearn.tree import export_graphviz
 import graphviz
 
-# Access and export the first tree
 dot_data = export_graphviz(model.estimators_[0],
                            feature_names=X.columns,
                            class_names=['Did not survive', 'Survived'],
@@ -148,11 +147,5 @@ dot_data = export_graphviz(model.estimators_[0],
                            rounded=True,
                            special_characters=True)
 
-# Create and display the graph
 graph = graphviz.Source(dot_data)
 graph
-
-# prompt: Export in pdf the graph : graph
-
-# Assuming the graph object 'graph' from your code is still in memory.
-graph.render("decision_tree", format="pdf")
